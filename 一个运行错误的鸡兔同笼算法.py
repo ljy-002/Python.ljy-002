@@ -1,0 +1,47 @@
+def CR_SC():
+    logs=[]
+    logs.append('开始运行')
+    #用假设法解鸡兔同笼问题：
+    #询问鸡和兔的数量及其他数据：
+    heads=int(input("头有多少个？"))
+    logs.append('询问“头有多少个？”')
+    logs.append('答案为：')
+    logs.append(heads)
+    foots=int(input("脚有多少个？"))
+    logs.append('询问“脚有多少个？”')
+    logs.append('答案为：')
+    logs.append(foots)
+    #假设全是鸡，然后运算：
+    result_chickens=(foots-2*heads)/4
+    logs.append('运算“(foots-2*heads)/4”')
+    logs.append('结果为：')
+    logs.append(result_chickens)
+    result_rabbits=(heads-result_chickens)/4
+    logs.append('运算“(heads-result_chickens)/4”')
+    logs.append('结果为：')
+    logs.append(result_rabbits)
+    result_chickens-=result_rabbits
+    logs.append('运算“-=result_rabbits”')
+    logs.append('结果为：')
+    logs.append(result_chickens)
+    result_rabbits+=result_rabbits
+    logs.append('运算“+=result_rabbits”')
+    logs.append('结果为：')
+    logs.append(result_rabbits)
+    print("鸡有",result_chickens,"只")
+    logs.append('输出：')
+    logs.append(result_chickens)
+    print("兔有",result_rabbits,"只")
+    logs.append('输出：')
+    logs.append(result_rabbits)
+
+#用假设法解鸡兔同笼问题：
+try:
+    CR_SC()
+    print("计算完成，无错误")
+    print("计算数据如下：")
+    print(logs)
+except:
+    print("计算错误，请重新计算")
+    print("计算数据如下：")
+    print(logs)
